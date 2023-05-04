@@ -4,6 +4,8 @@
 
 Unzip Japanese Shift-JIS zip archives on non-Japanese systems. This script unzips the file while converting the file names from Shift-JIS to UTF-8.
 
+- 2023/5/4 Update: Now it can convert the content of txt files from Shift-JIS to UTF-8 automatically!
+
 Japanese versions of Windows use Shift-JIS encoding to store file names. When a zip file is created from files containing Japanese characters and later opened on a non-Japanese system, the file names are [scrambled](https://en.wikipedia.org/wiki/Mojibake). This program aims to fix that problem.
 
 
