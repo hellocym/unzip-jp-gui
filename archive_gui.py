@@ -67,5 +67,11 @@ with zipfile.ZipFile(name, 'r') as z:
                     raise
         # don't try to write to directories
         if not filename.endswith('/'):
-            with open(filename, 'wb') as dest:
-                dest.write(z.read(f))
+            # if txt, convert to UTF-8
+            if filename.endswith('.txt'):
+                with open(filename, 'wb') as dest:
+                    # z is shift-jis bytes, so we need to encode it to UTF-8
+                    dest.write(z.read(f).decode('shift_jis').encode('utf-8'))
+            else:
+                with open(filename, 'wb') as dest:
+                    dest.write(z.read(f))
